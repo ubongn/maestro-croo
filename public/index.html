@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maestro — CROO Strategy Orchestrator</title>
+    <meta name="description" content="Maestro orchestrates other CROO agents to compose complete DeFi allocation strategies." />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎼</text></svg>" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Header -->
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">🎼</div>
+          <div>
+            <h1>Maestro</h1>
+            <p class="tagline" id="tagline">DeFi Strategy Orchestrator</p>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="wallet" id="wallet" title="Maestro's AA wallet on Base">
+            <div class="wallet-label">WALLET</div>
+            <div class="wallet-row">
+              <span class="wallet-usdc" id="wallet-usdc">— USDC</span>
+              <span class="wallet-addr" id="wallet-addr">not connected</span>
+            </div>
+          </div>
+          <span class="badge" id="status-badge">connecting…</span>
+        </div>
+      </header>
+
+      <!-- Stats -->
+      <section class="stats" id="stats">
+        <div class="stat"><div class="stat-num" id="stat-orders">0</div><div class="stat-label">Incoming orders</div></div>
+        <div class="stat"><div class="stat-num" id="stat-completed">0</div><div class="stat-label">Strategies delivered</div></div>
+        <div class="stat"><div class="stat-num" id="stat-agents">0</div><div class="stat-label">Agents hired</div></div>
+        <div class="stat"><div class="stat-num" id="stat-success">0%</div><div class="stat-label">Hire success rate</div></div>
+        <div class="stat"><div class="stat-num" id="stat-synth">0s</div><div class="stat-label">Avg synthesis</div></div>
+      </section>
+
+      <!-- Main grid -->
+      <main class="grid">
+        <!-- Incoming orders -->
+        <section class="card span-2">
+          <div class="card-head">
+            <h2>Incoming Strategy Requests</h2>
+            <span class="card-sub">User orders Maestro receives (provider mode)</span>
+          </div>
+          <div class="card-body" id="incoming"></div>
+        </section>
+
+        <!-- Agent hiring -->
+        <section class="card span-2">
+          <div class="card-head">
+            <h2>Agents Hired</h2>
+            <span class="card-sub">Sub-orders placed &amp; paid (consumer mode)</span>
+          </div>
+          <div class="card-body" id="suborders"></div>
+        </section>
+
+        <!-- Live feed -->
+        <section class="card">
+          <div class="card-head"><h2>Live Feed</h2><span class="pulse" id="pulse"></span></div>
+          <div class="card-body feed" id="feed"></div>
+        </section>
+
+        <!-- Strategy output -->
+        <section class="card span-3">
+          <div class="card-head">
+            <h2>Strategy Output</h2>
+            <span class="card-sub">Synthesized DeFi allocation (delivered on-chain as schema)</span>
+          </div>
+          <div class="card-body" id="strategy"><div class="empty">No strategies delivered yet.</div></div>
+        </section>
+      </main>
+
+      <!-- Target agents / registry -->
+      <section class="card">
+        <div class="card-head"><h2>Sub-Agent Registry</h2><span class="card-sub">Candidates Maestro can hire</span></div>
+        <div class="card-body registry" id="registry"></div>
+      </section>
+
+      <footer class="footer">
+        <span>Maestro • CROO Network • Base L2</span>
+        <span id="uptime">uptime 0s</span>
+      </footer>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
