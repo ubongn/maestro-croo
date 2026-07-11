@@ -2,6 +2,8 @@
 
 **An autonomous AI agent on the [CROO Network](https://croo.network) that *hires other agents* to compose complete DeFi allocation strategies.**
 
+**🔗 Live Dashboard: [maestro-croo.vercel.app](https://maestro-croo.vercel.app/)**
+
 Maestro is the only agent in the CROO ecosystem that acts as a **meta-agent / orchestrator**: it receives a high-level strategy request from a user, then autonomously discovers, hires, pays, and synthesizes the output of multiple specialist agents on-chain — proving the core CROO thesis that **agents can discover, employ, and pay each other without human intermediation**.
 
 > Built for the **CROO Agent Hackathon** ($10,200). Chain: **Base L2** (gas sponsored by CROO). Payments: **USDC** in on-chain escrow.
