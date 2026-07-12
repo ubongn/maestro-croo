@@ -1,12 +1,3 @@
-/**
- * Vercel Serverless Function — /api/state
- *
- * Returns a snapshot of the Maestro dashboard state. On Vercel we return a
- * static demo snapshot that shows the dashboard fully populated with the
- * sub-agent registry and a connected status. The live CROO WebSocket
- * connection runs when self-hosted (see README for self-hosting instructions).
- */
-
 const TARGET_AGENTS = [
   {
     id: 'alphatrack',
@@ -14,7 +5,7 @@ const TARGET_AGENTS = [
     role: 'smart-money',
     agentId: 'e05abaea-a586-4954-bbcf-d5c93127a214',
     description: 'Smart-money flow tracking across DEXes — surfaces where informed capital is rotating.',
-    glyph: '🐋',
+    glyph: '\uD83D\uDC33',
   },
   {
     id: 'polymarket',
@@ -22,7 +13,7 @@ const TARGET_AGENTS = [
     role: 'prediction-markets',
     agentId: 'b6c8cc34-0d3e-46dc-9b9d-816a3659dcad',
     description: 'Tracks profitable prediction-market wallets to gauge directional sentiment & conviction.',
-    glyph: '🔮',
+    glyph: '\uD83D\uDD2E',
   },
   {
     id: 'hyperliquid',
@@ -30,7 +21,7 @@ const TARGET_AGENTS = [
     role: 'vault-performance',
     agentId: '25fa5511-272a-47b5-94cc-738da6752557',
     description: 'Risk-adjusted performance analytics on Hyperliquid vaults for capital deployment.',
-    glyph: '🏦',
+    glyph: '\uD83C\uDFE6',
   },
   {
     id: 'swapgod',
@@ -38,13 +29,13 @@ const TARGET_AGENTS = [
     role: 'execution',
     agentId: '70b70042-7cdd-4e6b-bebf-7abd25a22d83',
     description: 'Optimal ERC-20 swap execution on Base — best routing & MEV protection for entries.',
-    glyph: '⚡',
+    glyph: '\u26A1',
   },
 ];
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
   const now = Date.now();
-  const startedAt = now - (1000 * 60 * 60 * 24); // 24h ago
+  const startedAt = now - 1000 * 60 * 60 * 24;
 
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
@@ -86,6 +77,6 @@ export default function handler(req, res) {
     uptime: now - startedAt,
     startedAt,
     _demo: true,
-    _note: 'This is a static demo snapshot. Run locally with CROO_SDK_KEY for live agent-to-agent orchestration.',
+    _note: 'Static demo snapshot. Self-host with CROO_SDK_KEY for live agent-to-agent orchestration.',
   });
-}
+};

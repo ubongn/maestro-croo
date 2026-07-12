@@ -1,10 +1,3 @@
-/**
- * Vercel Serverless Function — /api/target-agents
- *
- * Returns the sub-agent registry. These are the real CROO store agents
- * Maestro is configured to hire.
- */
-
 const TARGET_AGENTS = [
   {
     id: 'alphatrack',
@@ -12,7 +5,7 @@ const TARGET_AGENTS = [
     role: 'smart-money',
     agentId: 'e05abaea-a586-4954-bbcf-d5c93127a214',
     description: 'Smart-money flow tracking across DEXes — surfaces where informed capital is rotating.',
-    glyph: '🐋',
+    glyph: '\uD83D\uDC33',
   },
   {
     id: 'polymarket',
@@ -20,7 +13,7 @@ const TARGET_AGENTS = [
     role: 'prediction-markets',
     agentId: 'b6c8cc34-0d3e-46dc-9b9d-816a3659dcad',
     description: 'Tracks profitable prediction-market wallets to gauge directional sentiment & conviction.',
-    glyph: '🔮',
+    glyph: '\uD83D\uDD2E',
   },
   {
     id: 'hyperliquid',
@@ -28,7 +21,7 @@ const TARGET_AGENTS = [
     role: 'vault-performance',
     agentId: '25fa5511-272a-47b5-94cc-738da6752557',
     description: 'Risk-adjusted performance analytics on Hyperliquid vaults for capital deployment.',
-    glyph: '🏦',
+    glyph: '\uD83C\uDFE6',
   },
   {
     id: 'swapgod',
@@ -36,14 +29,14 @@ const TARGET_AGENTS = [
     role: 'execution',
     agentId: '70b70042-7cdd-4e6b-bebf-7abd25a22d83',
     description: 'Optimal ERC-20 swap execution on Base — best routing & MEV protection for entries.',
-    glyph: '⚡',
+    glyph: '\u26A1',
   },
 ];
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
   res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate');
   res.status(200).json({
     configured: TARGET_AGENTS.map((a) => ({ ...a, configured: true })),
     unconfigured: [],
   });
-}
+};
