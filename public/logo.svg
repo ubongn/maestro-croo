@@ -1,0 +1,27 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16a34a"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="gradSoft" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#dcfce7"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect width="200" height="200" rx="48" fill="url(#gradSoft)"/>
+  <rect x="1" y="1" width="198" height="198" rx="47" fill="none" stroke="#d9d9d3" stroke-width="2"/>
+  <!-- Stylized M formed by conductor batons -->
+  <!-- Left stroke -->
+  <path d="M48 140 L48 72 Q48 62 58 62 L70 62 Q80 62 83 72 L100 112 L117 72 Q120 62 130 62 L142 62 Q152 62 152 72 L152 140" stroke="url(#grad)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Baton dot top-left -->
+  <circle cx="58" cy="52" r="9" fill="#16a34a"/>
+  <!-- Baton dot top-right -->
+  <circle cx="142" cy="52" r="9" fill="#2563eb"/>
+  <!-- Sound waves emanating -->
+  <path d="M170 100 Q178 100 178 92" stroke="#16a34a" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <path d="M30 100 Q22 100 22 92" stroke="#2563eb" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+  <!-- Base text -->
+  <text x="100" y="180" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#6b7280" text-anchor="middle" letter-spacing="3">MAESTRO</text>
+</svg>
