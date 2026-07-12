@@ -1,8 +1,0 @@
-node_modules
-src
-test
-dist
-tsconfig.json
-*.tsbuildinfo
-start.mjs
-ARCHITECTURE.md
