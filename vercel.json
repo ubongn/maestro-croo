@@ -7,6 +7,7 @@
     { "src": "/style.css", "dest": "/public/style.css" },
     { "src": "/app.js", "dest": "/public/app.js" },
     { "src": "/logo.svg", "dest": "/public/logo.svg" },
+    { "src": "/logo.png", "dest": "/public/logo.png" },
     { "src": "/favicon.svg", "dest": "/public/favicon.svg" },
     { "src": "/demo.html", "dest": "/public/demo.html" },
     { "src": "/logo-preview.html", "dest": "/public/logo-preview.html" },
